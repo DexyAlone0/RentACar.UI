@@ -242,7 +242,7 @@ _Pvt_Extensions
 
 */.localhistory/*
 */*/.localhistory/* 
-
+node_modules 
 *.cache
 *.pdb
 *.dll

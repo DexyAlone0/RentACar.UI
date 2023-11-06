@@ -10,6 +10,12 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarSearchComponent } from './car-search/car-search.component';
 import { CarInfoComponent } from './car-info/car-info.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+
+
 
 
 @NgModule({
@@ -21,15 +27,19 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     CarSearchComponent,
     CarInfoComponent,
     ImageViewerComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    CommonModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule { }

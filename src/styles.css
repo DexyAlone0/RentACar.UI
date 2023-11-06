@@ -7,3 +7,10 @@ hr {
     width: 350px;
     margin: 0px auto;
 }
+/* Bootstrap ile uyumsuzlukları önlemek için appearance özelliğini sıfırla */
+.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
