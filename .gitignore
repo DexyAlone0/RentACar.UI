@@ -126,6 +126,11 @@ AutoTest.Net/
 # Installshield output folder
 [Ee]xpress/
 
+node_modules/
+.angular/
+
+
+
 # DocProject is a documentation generator add-in
 DocProject/buildhelp/
 DocProject/Help/*.HxT
@@ -142,7 +147,7 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
-# TODO: Comment the next line if you want to checkin your web deploy settings 
+# TODO: Comment the next line if you want to checkin your web deploy settings
 # but database connection strings (with potential passwords) will be unencrypted
 *.pubxml
 *.publishproj
@@ -241,8 +246,8 @@ _Pvt_Extensions
 .fake/
 
 */.localhistory/*
-*/*/.localhistory/* 
-node_modules 
+*/*/.localhistory/*
+
 *.cache
 *.pdb
 *.dll
@@ -252,12 +257,12 @@ node_modules
 */*/obj/*
 */bin/*
 */*/bin/*
-*/debug/* 
-*/release/* 
+*/debug/*
+*/release/*
 *.suo
 */*.suo
 */*.v12.suo
-packages/ 
+packages/
 */.vs/*
 */.idea/
 */.idea/*
