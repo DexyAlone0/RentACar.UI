@@ -2,34 +2,7 @@
   <div class="form-container">
     <div class="image-holder"></div>
     <div class="sign-up">
-      <h2 class="text-center"><strong>Hesap</strong> oluşturun.</h2>
-      <div class="form-group mb-3">
-        <input
-        required
-          [(ngModel)]="user.email"
-          #email="ngModel"
-          class="form-control"
-          type="email"
-          placeholder="Mail Adresi"
-        />
-
-        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
-          <div *ngIf="email.errors?.['required']">Mail adresi boş geçilemez.</div>
-        </div>
-      </div>
-
-      <div class="form-group mb-3">
-        <input required
-        #fullname ="ngModel"
-          [(ngModel)]="user.fullName"
-          class="form-control"
-          type="text"
-          placeholder="İsim Soyisim"
-        />
-        <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="alert">
-          <div *ngIf="fullname.errors?.['required']">İsim Soyisim boş geçilemez</div>
-        </div>
-      </div>
+      <h2 class="text-center"><strong>Giriş</strong> yap</h2>
       <div class="form-group mb-3">
         <input
         required
@@ -69,12 +42,12 @@
           class="btn btn-primary btn-lg btn-block"
           (click)="submitForm()"
         >
-          Kayıt Ol
+          Giriş Yap
         </button>
       </div>
       <br>
-      <a href="#" class="already"
-        ><h6>Hesabınız var mı ? Giriş yapın.</h6></a
+      <a href="/sign-up" class="already"
+        ><h6>Hesabınız yok mu ? Kayıt olun.</h6></a
       >
     </div>
   </div>

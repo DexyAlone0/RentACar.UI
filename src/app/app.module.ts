@@ -14,6 +14,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { CreateCarComponent } from './create-car/create-car.component';
 
 
 
@@ -28,6 +30,8 @@ import { CommonModule } from '@angular/common';
     CarInfoComponent,
     ImageViewerComponent,
     SignUpComponent,
+    LoginComponent,
+    CreateCarComponent,
   ],
   imports: [
     BrowserModule,

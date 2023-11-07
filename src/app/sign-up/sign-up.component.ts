@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SignUpService } from "../services/signup-service";
+import { UserService } from "../services/user-service";
 import { UserCreateRequest } from "../request/user-create-request";
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -15,7 +15,7 @@ export class SignUpComponent {
     email: ""
   };
 
-  constructor(private dataService: SignUpService , private toastr: ToastrService) {}
+  constructor(private dataService: UserService , private toastr: ToastrService) {}
 
   submitForm() {
     this.dataService.postData(this.user).subscribe({

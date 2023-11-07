@@ -6,7 +6,7 @@
 .register-photo .image-holder {
   display:table-cell;
   width:auto;
-   background:url(../../assets/img/sign-up.png);
+  background:url(../../assets/img/login-page.jpg);
   background-size:cover;
 }
 

@@ -25,4 +25,5 @@ export class CarDetailService {
     return this.http.get<CarDetailResponse[]>(`${this.apiUrl}/carQuery`);
   }
 
+
 }
