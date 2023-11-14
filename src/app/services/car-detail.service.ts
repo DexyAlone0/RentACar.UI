@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CarDetailResponse } from '../response/car-detail-response';
 import { Observable } from 'rxjs';
+import { BrandResponse } from '../response/brand-response';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class CarDetailService {
   getItemsAll(): Observable<CarDetailResponse[]> {
     return this.http.get<CarDetailResponse[]>(`${this.apiUrl}/carQuery`);
   }
+
 
 
 }

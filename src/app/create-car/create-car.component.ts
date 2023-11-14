@@ -4,6 +4,11 @@ import { BrandResponse } from '../response/brand-response';
 import { ModelResponse } from '../response/model-response';
 import { CarDetailService } from '../services/car-detail.service';
 import { ActivatedRoute } from '@angular/router';
+import { CreateCarService } from '../services/create-car.service';
+import { CarDetailResponse } from '../response/car-detail-response';
+import { CreateCarRequest } from '../request/create-car.request';
+
+
 
 @Component({
   selector: 'app-create-car',
@@ -12,20 +17,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CreateCarComponent {
 
-  carId : number;
-  constructor(private carDetailService: CarDetailService, private activatedRoute : ActivatedRoute)
+  carCreateRequest : CreateCarRequest;
+  brands: BrandResponse[] | undefined;
+  models: ModelResponse[] | undefined = [];
+  carId : number=0;
+  modelSelect : any;
+  brandSelect : any;
+  constructor(private createCarService: CreateCarService)
   {
-    this.activatedRoute.params.subscribe(p => {
-      this.carId = p["carId"]
-    })
-  }
 
-  ngOnInit() {
-    this.carDetailService.getItemsById(this.carId).subscribe({
-      next: (data: CarInfoResponse) => {
+  }
+  //Marka seçildiğinde modelleri getirmesi için yazılan method şuanda kullanılmıyor.
+  brandChange(){
+
+    this.models = undefined;
+    this.createCarService.getModelByBrandId(this.brandSelect).subscribe({
+      next: (data: ModelResponse[]) => {
         // next
-        this.item = data;
-        this.imageViewerComponent.showFile(this.item.fileId);
+        this.models = data;
+
       },
       error: (error) => {
         // error
@@ -37,5 +47,22 @@ export class CreateCarComponent {
     });
 
   }
+  ngOnInit() {
+    this.createCarService.getAllBrand().subscribe({
+      next: (data: BrandResponse[]) => {
+        // next
+        this.brands = data;
+      },
+      error: (error) => {
+        // error
+        console.error('API isteği başarısız:', error);
+      },
+      complete: () => {
+        // complete
+      }
+    });
 
+  }
 }
+
+

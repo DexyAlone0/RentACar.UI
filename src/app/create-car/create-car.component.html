@@ -1,7 +1,32 @@
 <div class="form-group">
-  <label for="exampleFormControlSelect1">Example select</label>
-  <select class="form-control" id="exampleFormControlSelect1">t
-
-    <option value="" *ngFor="let item of list"></option>
+  <div class="text-center"><h3>Marka seçin.</h3></div>
+  <label for="exampleFormControlSelect1"></label>
+  <select class="form-control" [(ngModel)]="carCreateRequest.brandId">
+    <option value="{{ brand.id }}" *ngFor="let brand of brands">
+      {{ brand.name }}
+    </option>
   </select>
+  <br />
+  <br />
+  <div class="text-center"><h3>Model seçin.</h3></div>
+
+  <br />
+  <input class="form-control" type="text" [(ngModel)]="carCreateRequest.name" />
+  <select name="form-control" [(ngModel)]="carCreateRequest.fuelTypeId">
+    <option value="1">Benzin</option>
+    <option value="2">Dizel</option>
+    <option value="3">LPG</option>
+  </select>
+  <select name="form-control" [(ngModel)]="carCreateRequest.gearTypeId">
+    <option value="1">Otomatik</option>
+    <option value="2">Manuel</option>
+  </select>
+
+  <!-- <select class="form-control" [(ngModel)]="modelSelect">
+    <option value="{{ model.id }}" *ngFor="let model of models">
+      {{ model.name }}
+    </option>
+
+    Marka adı(brand) değiştiği zaman ona göre modelleri getiren kod (change)="brandChange()"
+  </select> -->
 </div>
