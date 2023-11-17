@@ -7,6 +7,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { CreateCarComponent } from './create-car/create-car.component';
+import { AuthGuard } from './_guards/auth/auth.guard';
 
 const routes: Routes = [
   { path: 'car-list', component: CarListComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path : 'image-viewer' , component : ImageViewerComponent},
   {path : 'sign-up', component : SignUpComponent},
   {path : 'login', component : LoginComponent},
-  {path : 'create-car', component : CreateCarComponent}
+  {path : 'create-car', component : CreateCarComponent ,canActivate : [AuthGuard]}
 ];
 
 @NgModule({

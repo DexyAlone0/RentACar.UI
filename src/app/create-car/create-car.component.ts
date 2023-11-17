@@ -17,7 +17,7 @@ import { CreateCarRequest } from '../request/create-car.request';
 })
 export class CreateCarComponent {
 
-  carCreateRequest : CreateCarRequest;
+  carCreateRequest : CreateCarRequest= new CreateCarRequest();
   brands: BrandResponse[] | undefined;
   models: ModelResponse[] | undefined = [];
   carId : number=0;
@@ -47,6 +47,28 @@ export class CreateCarComponent {
     });
 
   }
+  saveCar(){
+    this.createCarService.carCreate(this.carCreateRequest).subscribe({
+      next: () => {
+        // next
+        console.log('başarılı');
+      },
+      error: (error) => {
+        // error
+        console.error('API isteği başarısız:', error);
+      },
+      complete: () => {
+      }
+    });
+    console.log('bitti');
+
+  }
+
+  onFileSelected(event: any) {
+    this.carCreateRequest.file = event.target.files[0];
+  }
+
+
   ngOnInit() {
     this.createCarService.getAllBrand().subscribe({
       next: (data: BrandResponse[]) => {

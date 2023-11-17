@@ -21,7 +21,7 @@ export class SignUpComponent {
     this.dataService.postData(this.user).subscribe({
       next: () => {
         // next
-        console.log('başarılı');
+        this.showSuccess();
       },
       error: (error) => {
         // error

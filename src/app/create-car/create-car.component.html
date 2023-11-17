@@ -12,15 +12,41 @@
 
   <br />
   <input class="form-control" type="text" [(ngModel)]="carCreateRequest.name" />
-  <select name="form-control" [(ngModel)]="carCreateRequest.fuelTypeId">
+  <br>
+  <div class="text-center"><h3>Yakıt türünü seçin.</h3></div>
+  <select class="form-control" [(ngModel)]="carCreateRequest.fuelTypeId">
     <option value="1">Benzin</option>
     <option value="2">Dizel</option>
     <option value="3">LPG</option>
   </select>
-  <select name="form-control" [(ngModel)]="carCreateRequest.gearTypeId">
+<br>
+  <div class="text-center"><h3>Kasa tipini seçin.</h3></div>
+  <select class="form-control" [(ngModel)]="carCreateRequest.caseTypeId">
+    <option value="1">Sedan</option>
+    <option value="2">Hatchback</option>
+  </select>
+<br>
+  <div class="text-center"><h3>Koltuk sayısını seçin.</h3></div>
+  <select class="form-control" [(ngModel)]="carCreateRequest.countOfSeats">
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+
+  </select>
+<br>
+  <div class="text-center"><h3>Vites tipini seçin.</h3></div>
+  <select class="form-control" [(ngModel)]="carCreateRequest.gearTypeId">
     <option value="1">Otomatik</option>
     <option value="2">Manuel</option>
   </select>
+  <br>
+  <div class="text-center">
+    <input type="file" class="file-upload" (change)="onFileSelected($event)">
+  </div>
+  <button (click)="saveCar()" type="button" class="form-control">Kaydet</button>
 
   <!-- <select class="form-control" [(ngModel)]="modelSelect">
     <option value="{{ model.id }}" *ngFor="let model of models">
