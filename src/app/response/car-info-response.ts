@@ -5,5 +5,8 @@ export class CarInfoResponse {
     gearTypeName: string="";
     engineCapacityName : string="";
     modelName : string="";
-    fileId : number; 
+    fileId : number;
+    modelId : number;
+    year : number;
+    hesAirConditioning : boolean;
     }

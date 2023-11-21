@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { CarDetailResponse } from '../response/car-detail-response';
 import { Observable } from 'rxjs';
 import { BrandResponse } from '../response/brand-response';
+import { UpdateCarRequest } from '../request/update-car.request';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,9 @@ export class CarDetailService {
 
   getItems(): Observable<CarDetailResponse> {
     return this.http.get<CarDetailResponse>(`${this.apiUrl}/carQuery/21`);
+  }
+  updateCar(updateCarRequest : UpdateCarRequest): Observable<any> {
+    return this.http.put(`${this.apiUrl}/updateCar` , updateCarRequest);
   }
 
   getItemsById(carId : number): Observable<CarDetailResponse> {

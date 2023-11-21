@@ -8,6 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { CreateCarComponent } from './create-car/create-car.component';
 import { AuthGuard } from './_guards/auth/auth.guard';
+import { CarUpdateComponent } from './car-update/car-update.component';
 
 const routes: Routes = [
   { path: 'car-list', component: CarListComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path : 'image-viewer' , component : ImageViewerComponent},
   {path : 'sign-up', component : SignUpComponent},
   {path : 'login', component : LoginComponent},
-  {path : 'create-car', component : CreateCarComponent ,canActivate : [AuthGuard]}
+  {path : 'create-car', component : CreateCarComponent ,canActivate : [AuthGuard]},
+  {path : 'car-update/:carId', component : CarUpdateComponent , canActivate : [AuthGuard]}
 ];
 
 @NgModule({

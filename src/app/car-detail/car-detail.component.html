@@ -58,8 +58,10 @@
                 width="25" height="25" alt></div>
             <div class="col-lg-12">2500 TL<br>Teminat Tutarı</div>
             <div>
-              <!-- Diğer içerikler burada olabilir -->
-              <button class="btn btn-primary" [routerLink]="['/car-info', item?.carId]">Car Info</button>
+
+              <button class="btn btn-primary" [routerLink]="['/car-info', item?.carId]">Araç Detayları</button>
+              <br>
+              <button class="btn btn-primary" [routerLink]="['/car-update', item?.carId]">Aracı Güncelle</button>
 
             </div>
           </div>

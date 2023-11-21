@@ -9,7 +9,7 @@ import { CarDetailResponse } from '../response/car-detail-response';
   styleUrls: ['./car-search.component.css']
 })
 export class CarSearchComponent {
-@ViewChild(ImageViewerComponent) imageViewerCompoent : ImageViewerComponent;
+@ViewChild(ImageViewerComponent) imageViewerComponent : ImageViewerComponent;
  item: any=null;
  carId : number=0;
 
@@ -23,9 +23,8 @@ export class CarSearchComponent {
  getByCarId(carId: number){
   this.carDetailService.getItemsById(carId).subscribe({
     next: (data: CarDetailResponse) => {
-      // next
       this.item = data;
-      this.imageViewerCompoent.showFile(this.item.fileId);
+      this.imageViewerComponent.showFile(this.item.fileId);
     },
     error: (error) => {
       // error

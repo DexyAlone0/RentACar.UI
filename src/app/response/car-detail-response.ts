@@ -2,6 +2,9 @@
 export class CarDetailResponse {
 id: number;
 carId : number;
+modelId : number;
+year : number;
+hesAirConditioning : boolean;
 brandName : string;
 fuelTypeName : string;
 gearTypeName: string;
@@ -12,6 +15,9 @@ fileId : number;
 
 constructor(data: any){
 this.carId = data.carId | data.Id;
+this.hesAirConditioning = data.hesAirConditioning;
+this.modelId = data.modelId;
+this.year = data.year;
 this.brandName = data.brandName;
 this.modelName = data.modelName;
 this.fuelTypeName = data.fuelTypeName;

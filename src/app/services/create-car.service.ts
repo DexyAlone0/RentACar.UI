@@ -19,6 +19,9 @@ export class CreateCarService {
   getAllBrand() : Observable<BrandResponse[]>{
     return this.http.get<BrandResponse[]>(`${this.apiUrl}/all`);
   }
+  getAllModel() : Observable<ModelResponse[]>{
+    return this.http.get<ModelResponse[]>(`${this.apiUrl}/allModel`);
+  }
   getModelByBrandId(brandId : number) : Observable<ModelResponse[]>{
     return this.http.get<ModelResponse[]>(`${this.apiUrl}/model/${brandId}`);
   }

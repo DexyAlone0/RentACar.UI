@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartComponent } from './components/cart.component';
+
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { FormsModule } from '@angular/forms';
 import { CarListComponent } from './car-list/car-list.component';
@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { CreateCarComponent } from './create-car/create-car.component';
 import { JwtInterceptor } from './helpers/jwtinterceptor';
+import { CarUpdateComponent } from './car-update/car-update.component';
 
 
 
@@ -24,7 +25,7 @@ import { JwtInterceptor } from './helpers/jwtinterceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    CartComponent,
+
     CarDetailComponent,
     CarListComponent,
     CarSearchComponent,
@@ -33,6 +34,7 @@ import { JwtInterceptor } from './helpers/jwtinterceptor';
     SignUpComponent,
     LoginComponent,
     CreateCarComponent,
+    CarUpdateComponent,
   ],
   imports: [
     BrowserModule,
